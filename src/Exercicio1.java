@@ -11,21 +11,20 @@ public class Exercicio1 {
     }
 
     public static boolean ehpar(int valorUsuario) {
-        int restoDivisao, cont = 1, contNaoPar = 0;
+        int restoDivisao, cont = 0, contNaoPar = 0,tamanhoValorUsuario;
 
-        while (true) {
-            restoDivisao = valorUsuario % cont;
-            if (restoDivisao == 0) {
-                if ((valorUsuario / cont) % 2 != 0) {
-                    contNaoPar++;
-                }
-                break;
-            } else {
-                if (restoDivisao % 2 != 0) {
-                    contNaoPar++;
-                }
+        String valorEmString = String.valueOf(valorUsuario);
+        tamanhoValorUsuario= valorEmString.length();
+
+
+        while (cont<tamanhoValorUsuario) {
+            restoDivisao = valorUsuario %10;
+            //System.out.println("RESTO "+restoDivisao);
+            if (restoDivisao%2!=0){
+                contNaoPar++;
             }
-            cont*=10;
+            valorUsuario /= 10;
+            cont ++;
         }
         if (contNaoPar==0) return true;
         else return false;
