@@ -20,9 +20,9 @@ public class Exercicio3 {
         }
         for (int i = 0; i <senhaUsuario.length() ; i++) {
             //convertendo pra inteiro
-            int letraASCII = (int) senhaUsuario.charAt(i);
+            letra =  senhaUsuario.charAt(i);
             //usando caracteres especiais de acordo com a tabela ascii
-            if (((32<=letraASCII && letraASCII<=47)||(58<=letraASCII && letraASCII<=64)||(91<=letraASCII && letraASCII<=96)||(123<=letraASCII && letraASCII<=126))){
+            if (!(Character.isDigit(letra) || Character.isLetter(letra))){
                 return false;
             }
         }
